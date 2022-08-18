@@ -1,0 +1,41 @@
+    <footer class="container">
+        Feito com ❤ por <a target='_blank' href='https://github.com/gabriell-c'>Gabriel Cardoso</a>
+    </footer>
+
+    <script>
+        const inp = document.getElementById('input')
+        const label = document.getElementById('label')
+        const mediaQuery = window.matchMedia('(min-width: 768px)')
+
+        inp.addEventListener("focus", ()=>{
+            inp.style.maxWidth = '300px';
+            label.style.right = '300px'
+        });
+
+        const chk=()=>{
+            if (mediaQuery.matches) {
+            inp.addEventListener("blur", ()=>{
+                    if(inp.value == ''){
+                        inp.style.maxWidth = '40px';
+                        label.style.left = '36px'
+                    }else{
+                        inp.style.maxWidth = '300px';
+                        label.style.right = '300px'
+                    }
+                })
+            }else {
+                inp.addEventListener("blur", ()=>{
+                    if(inp.value == ''){
+                        inp.style.maxWidth = '300px';
+                        label.style.left = '300px'
+                    }else{
+                        inp.style.maxWidth = '300px';
+                        label.style.right = '300px'
+                    }
+                })
+            }
+        }        
+        chk()
+    </script>
+    </body>
+</html>
